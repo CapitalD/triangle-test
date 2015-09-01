@@ -7,6 +7,10 @@ body {
   line-height: 4em;
 }
 
+.five-point-label {
+  width: 42%;
+}
+
 /* ADJUSTMENTS FOR MOBILE */
 @media (max-width: 767px) {
   .option-button {
