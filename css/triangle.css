@@ -1,3 +1,15 @@
 body {
   text-align: center;
 }
+
+.option-button {
+  height: 5em;
+  line-height: 4em;
+}
+
+/* ADJUSTMENTS FOR MOBILE */
+@media (max-width: 767px) {
+  .option-button {
+    margin-top: 1em;
+  }
+}
