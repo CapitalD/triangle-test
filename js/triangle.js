@@ -1,6 +1,8 @@
 
 /* Switch to btn-success class when 5 point scale radio button checked */
-$("input[name=five-point-scale]").change(function() {
-  $("input[name=five-point-scale]").parents("label").removeClass("btn-success");
-  $(this).parents("label").addClass("btn-success");
-});
+function better_button_group(group_name, active_class) {
+  $("input[name="+group_name+"]").change(function() {
+    $("input[name="+group_name+"]").parents("label").removeClass(active_class);
+    $(this).parents("label").addClass(active_class);
+  });
+}

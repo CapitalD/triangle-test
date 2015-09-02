@@ -11,6 +11,10 @@ body {
   width: 42%;
 }
 
+.ten-point-label {
+  width: 21%;
+}
+
 /* ADJUSTMENTS FOR MOBILE */
 @media (max-width: 767px) {
   .option-button {

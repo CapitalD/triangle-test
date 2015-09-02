@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Triangle Test</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/triangle.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-12">
+
+        <h1>New taster</h1>
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xs-10 col-xs-offset-1">
+
+        <div class="form-group text-left">
+          <label for="name-field">Name</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="name-field">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </span>
+            <input type="text" class="form-control" placeholder="Name" id="name-field" aria-describedby="name-field">
+          </div>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="email-field">Email</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="email-field">@</span>
+            <input type="text" class="form-control" placeholder="Email" name="email-field" id="email-field" aria-describedby="email-field">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-xs-offset-1">
+
+        <div class="form-group text-left">
+          <label for="certification-field">Highest certfication</label>
+          <select class="form-control input-lg" id="certification-field">
+            <option>None</option>
+            <option>BJCP - Provisional</option>
+            <option>BJCP - Apprentice</option>
+            <option>BJCP - Recognized</option>
+            <option>BJCP - Certified</option>
+            <option>BJCP - National</option>
+            <option>BJCP - Master</option>
+            <option>BJCP - Grand Master</option>
+            <option>Cicerone - Certified Beer Server</option>
+            <option>Cicerone - Certified Cicerone</option>
+            <option>Cicerone - Master Cicerone</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="col-xs-5">
+
+        <div class="form-group text-left">
+          <label for="brewer-field">Brewing experience</label>
+          <select class="form-control input-lg" id="certification-field">
+            <option>None</option>
+            <option>Homebrewer - Beginner</option>
+            <option>Homebrewer - Intermediate</option>
+            <option>Homebrewer - Advanced</option>
+            <option>Homebrewer - Expert</option>
+            <option>Pro-brewer - Junior</option>
+            <option>Pro-brewer - Senior</option>
+            <option>Pro-brewer - Head Brewer</option>
+            <option>Pro-brewer - Master Brewer</option>
+          </select>
+
+
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+
+      <div class="col-xs-10 col-xs-offset-1">
+
+        <div class="form-group text-left">
+          <label for="overall-knowledge-field">Overall beer knowledge</label>
+          <div class="btn-group btn-group-justified" data-toggle="buttons">
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option1" autocomplete="off">1
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option2" autocomplete="off"> 2
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option3" autocomplete="off"> 3
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option4" autocomplete="off"> 4
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option5" autocomplete="off"> 5
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option6" autocomplete="off"> 6
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option7" autocomplete="off"> 7
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option8" autocomplete="off"> 8
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option9" autocomplete="off"> 9
+            </label>
+            <label class="btn btn-lg btn-default">
+              <input type="radio" name="overall-knowledge-field" id="option10" autocomplete="off"> 10
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-xs-5 col-xs-offset-1">
+
+        <div class="ten-point-label">
+          <p>Rudimentary</p>
+        </div>
+
+      </div>
+      <div class="col-xs-5">
+        <div class="ten-point-label pull-right">
+          <p>Expert</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-xs-6 col-xs-offset-3">
+
+        <a href="participant.html" role="button" name="save-taster" class="btn btn-lg btn-info btn-block">Save</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="js/triangle.js"></script>
+  <script type="text/javascript">
+    better_button_group("overall-knowledge-field", "btn-success");
+  </script>
+</body>
+
+</html>
