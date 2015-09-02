@@ -52,10 +52,29 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-5 col-xs-offset-1">
+      <div class="col-xs-10 col-sm-5 col-xs-offset-1">
 
         <div class="form-group text-left">
-          <label for="certification-field">Highest certfication</label>
+          <label for="brewer-field">Brewing experience</label>
+          <select class="form-control input-lg" id="certification-field">
+            <option>None</option>
+            <option>Homebrewer - Beginner</option>
+            <option>Homebrewer - Intermediate</option>
+            <option>Homebrewer - Advanced</option>
+            <option>Homebrewer - Expert</option>
+            <option>Pro-brewer - Junior</option>
+            <option>Pro-brewer - Senior</option>
+            <option>Pro-brewer - Head Brewer</option>
+            <option>Pro-brewer - Master Brewer</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="col-xs-10 col-sm-5 col-xs-offset-1 col-sm-offset-0">
+
+        <div class="form-group text-left">
+          <label for="certification-field">Judging certfication</label>
           <select class="form-control input-lg" id="certification-field">
             <option>None</option>
             <option>BJCP - Provisional</option>
@@ -71,34 +90,16 @@
           </select>
         </div>
 
-      </div>
-
-      <div class="col-xs-5">
-
-        <div class="form-group text-left">
-          <label for="brewer-field">Brewing experience</label>
-          <select class="form-control input-lg" id="certification-field">
-            <option>None</option>
-            <option>Homebrewer - Beginner</option>
-            <option>Homebrewer - Intermediate</option>
-            <option>Homebrewer - Advanced</option>
-            <option>Homebrewer - Expert</option>
-            <option>Pro-brewer - Junior</option>
-            <option>Pro-brewer - Senior</option>
-            <option>Pro-brewer - Head Brewer</option>
-            <option>Pro-brewer - Master Brewer</option>
-          </select>
-
 
       </div>
+
     </div>
-  </div>
 
     <div class="row">
 
       <div class="col-xs-10 col-xs-offset-1">
 
-        <div class="form-group text-left">
+        <div class="form-group text-left" style="margin-bottom: 0;">
           <label for="overall-knowledge-field">Overall beer knowledge</label>
           <div class="btn-group btn-group-justified" data-toggle="buttons">
             <label class="btn btn-lg btn-default">
@@ -143,10 +144,11 @@
       <div class="col-xs-5 col-xs-offset-1">
 
         <div class="ten-point-label">
-          <p>Rudimentary</p>
+          <p>Beginner</p>
         </div>
 
       </div>
+
       <div class="col-xs-5">
         <div class="ten-point-label pull-right">
           <p>Expert</p>
