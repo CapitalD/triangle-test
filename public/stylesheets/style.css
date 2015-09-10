@@ -6,3 +6,18 @@ body {
   height: 5em;
   line-height: 4em;
 }
+
+.horizontal-scale {
+  margin-bottom: 0;
+}
+
+.ten-point-label {
+  width: 21%;
+}
+
+/* ADJUSTMENTS FOR MOBILE */
+@media (max-width: 767px) {
+  .option-button {
+    margin-top: 1em;
+  }
+}
