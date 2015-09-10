@@ -1,3 +1,8 @@
 body {
   text-align: center;
 }
+
+.option-button {
+  height: 5em;
+  line-height: 4em;
+}
