@@ -10,10 +10,10 @@ block content
     .row
       .col-xs-6.col-xs-offset-3
         .list-group
-          a.list-group-item(href='/tasters/1')
-            h4.list-group-heading Duncan Thurston
-          a.list-group-item(href='/tasters/2')
-            h4.list-group-heading Notsruht Nacnud
+          each taster in tasters
+            a.list-group-item(href='/tasters/'+taster.id)
+              h4.list-group-heading 
+                = taster.name
             
     .row
       .col-xs-2.col-xs-offset-1

@@ -3,129 +3,131 @@ extends layout
 block content
 
   .container-fluid
-    .row
-      .col-xs-12
-        h1= title
+  
+    form(action="/tasters/new", method="post")
+      .row
+        .col-xs-12
+          h1= title
         
-    .row
-      .col-xs-10.col-xs-offset-1
+      .row
+        .col-xs-10.col-xs-offset-1
       
-        .form-group.text-left
-          label(for='name-field') Name
-          .input-group.input-group-lg
-            span.input-group-addon
-              span.glyphicon.glyphicon-user(aria-hidden='true')
-            input#name-field.form-control(type='text', placeholder='Name', aria-describedby='name-field')
+          .form-group.text-left
+            label(for='name_field') Name
+            .input-group.input-group-lg
+              span.input-group-addon
+                span.glyphicon.glyphicon-user(aria-hidden='true')
+              input#name_field.form-control(type='text', name='name_field' placeholder='Name', aria-describedby='name_field')
             
-        .form-group.text-left
-          label(for='email-field') Email
-          .input-group.input-group-lg
-            span.input-group-addon @
-            input#email-field.form-control(type='text', placeholder='Email', aria-describedby='email-field')
+          .form-group.text-left
+            label(for='email_field') Email
+            .input-group.input-group-lg
+              span.input-group-addon @
+              input#email_field.form-control(type='text', name='email_field' placeholder='Email', aria-describedby='email_field')
 
-    .row
-      .col-xs-10.col-sm-5.col-xs-offset-1
+      .row
+        .col-xs-10.col-sm-5.col-xs-offset-1
       
-        .form-group.text-left
-          label(for='brewing-exp-field') Brewing experience
-          select#brewing-exp-field.form-control.input-lg
-            option None
-            option Homebrewer - Beginner
-            option Homebrewer - Intermediate
-            option Homebrewer - Advanced
-            option Homebrewer - Expert
-            option Pro-brewer - Junior
-            option Pro-brewer - Senior
-            option Pro-brewer - Head Brewer
-            option Pro-brewer - Master Brewer
+          .form-group.text-left
+            label(for='brewing-exp-field') Brewing experience
+            select#brewing-exp-field.form-control.input-lg(name='brewing_exp_field')
+              option(value='0') None
+              option(value='1') Homebrewer - Beginner
+              option(value='2') Homebrewer - Intermediate
+              option(value='3') Homebrewer - Advanced
+              option(value='4') Homebrewer - Expert
+              option(value='5') Pro-brewer - Junior
+              option(value='6') Pro-brewer - Senior
+              option(value='7') Pro-brewer - Head Brewer
+              option(value='8') Pro-brewer - Master Brewer
       
-      .col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-0
+        .col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-0
       
-        .form-group.text-left
-          label(for='certification-field') Judging certification
-          select#certification-field.form-control.input-lg
-            option None
-            option BJCP - Provisional
-            option BJCP - Apprentice
-            option BJCP - Recognized
-            option BJCP - Certified
-            option BJCP - National
-            option BJCP - Master
-            option BJCP - Grand Master
-            option Cicerone - Certified Beer Server
-            option Cicerone - Certified Cicerone
-            option Cicerone - Master Cicerone
+          .form-group.text-left
+            label(for='certification-field') Judging certification
+            select#certification-field.form-control.input-lg(name='certification_field')
+              option(value='0') None
+              option(value='1') BJCP - Provisional
+              option(value='2') BJCP - Apprentice
+              option(value='3') BJCP - Recognized
+              option(value='4') BJCP - Certified
+              option(value='5') BJCP - National
+              option(value='6') BJCP - Master
+              option(value='7') BJCP - Grand Master
+              option(value='8') Cicerone - Certified Beer Server
+              option(value='9') Cicerone - Certified Cicerone
+              option(value='10') Cicerone - Master Cicerone
             
-    .row.hidden-xs
-      .col-xs-10.col-xs-offset-1
+      .row.hidden-xs
+        .col-xs-10.col-xs-offset-1
       
-        .form-group.text-left.horizontal-scale
-          label(for='overall-knowledge-field') Overall beer knowledge
-          .btn-group.btn-group-justified(data-toggle='buttons')
-            label.btn.btn-lg.btn-default
-              input#option1(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 1
-            label.btn.btn-lg.btn-default
-              input#option2(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 2
-            label.btn.btn-lg.btn-default
-              input#option3(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 3
-            label.btn.btn-lg.btn-default
-              input#option4(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 4
-            label.btn.btn-lg.btn-default
-              input#option5(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 5
-            label.btn.btn-lg.btn-default
-              input#option6(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 6
-            label.btn.btn-lg.btn-default
-              input#option7(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 7
-            label.btn.btn-lg.btn-default
-              input#option8(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 8
-            label.btn.btn-lg.btn-default
-              input#option9(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 9
-            label.btn.btn-lg.btn-default
-              input#option10(type='radio', name='overall-knowledge-field', autocomplete='off')
-              | 10
+          .form-group.text-left.horizontal-scale
+            label(for='overall-knowledge-field') Overall beer knowledge
+            .btn-group.btn-group-justified(data-toggle='buttons')
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='1', name='overall_knowledge_field', autocomplete='off')
+                | 1
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='2', name='overall_knowledge_field', autocomplete='off')
+                | 2
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='3', name='overall_knowledge_field', autocomplete='off')
+                | 3
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='4', name='overall_knowledge_field', autocomplete='off')
+                | 4
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='5', name='overall_knowledge_field', autocomplete='off')
+                | 5
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='6', name='overall_knowledge_field', autocomplete='off')
+                | 6
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='7', name='overall_knowledge_field', autocomplete='off')
+                | 7
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='8', name='overall_knowledge_field', autocomplete='off')
+                | 8
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='9', name='overall_knowledge_field', autocomplete='off')
+                | 9
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='10', name='overall_knowledge_field', autocomplete='off')
+                | 10
               
-    .row.hidden-xs
-      .col-xs-5.col-xs-offset-1
-      
-        .ten-point-label
-          p Beginner
-          
-      .col-xs-5
-      
-        .ten-point-label.pull-right
-          p Expert
-          
-    .row.visible-xs
-      .col-xs-10.col-xs-offset-1
-      
-        .form-group.text-left
-          label(for='overall-knowledge-mob-field') Overall beer knowledge
-          select#overall-knowledge-mob-field.form-control.input-lg
-            option(value='1') 1 - Beginner
-            option(value='2') 2
-            option(value='3') 3
-            option(value='4') 4
-            option(value='5') 5
-            option(value='6') 6
-            option(value='7') 7
-            option(value='8') 8
-            option(value='9') 9
-            option(value='10') 10 - Expert
+      .row.hidden-xs
+        .col-xs-5.col-xs-offset-1
+        
+          .ten-point-label
+            p Beginner
             
-    .row
-      .col-xs-6.col-xs-offset-3
-        a.btn.btn-lg.btn-info.btn-block(name='save-taster', role='button') Save
+        .col-xs-5
+        
+          .ten-point-label.pull-right
+            p Expert
+            
+      .row.visible-xs
+        .col-xs-10.col-xs-offset-1
+        
+          .form-group.text-left
+            label(for='overall-knowledge-mob-field') Overall beer knowledge
+            select#overall-knowledge-mob-field.form-control.input-lg(name='overall_knowledge_mob_field')
+              option(value='1') 1 - Beginner
+              option(value='2') 2
+              option(value='3') 3
+              option(value='4') 4
+              option(value='5') 5
+              option(value='6') 6
+              option(value='7') 7
+              option(value='8') 8
+              option(value='9') 9
+              option(value='10') 10 - Expert
+              
+      .row
+        .col-xs-6.col-xs-offset-3
+          button.btn.btn-lg.btn-info.btn-block(name='save-taster', type='submit') Save
 
 block body_end
   script(type='text/javascript', src='/javascripts/triangle.js')
   script(type='text/javascript')
-    | better_button_group("overall-knowledge-field", "btn-success");
+    | better_button_group("overall_knowledge_field", "btn-success");
