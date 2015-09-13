@@ -2,6 +2,11 @@ module.exports = [
   {
     "model": "Certification",
     "data": {
+      "certification": "None"
+    }
+  }, {
+    "model": "Certification",
+    "data": {
       "certification": "BJCP - Provisional"
     }
   }, {

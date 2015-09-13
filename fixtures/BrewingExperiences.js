@@ -2,6 +2,11 @@ module.exports = [
   {
     "model": "BrewingExperience",
     "data": {
+      "level": "None"
+    }
+  }, {
+    "model": "BrewingExperience",
+    "data": {
       "level": "Homebrewer - Beginner"
     }
   }, {

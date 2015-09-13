@@ -31,7 +31,6 @@ block content
           .form-group.text-left
             label(for='brewing-exp-field') Brewing experience
             select#brewing-exp-field.form-control.input-lg(name='brewing_exp_field')
-              option(value='0') None
               each exp in experiences
                 option(value=exp.id)
                   = exp.level
@@ -41,7 +40,6 @@ block content
           .form-group.text-left
             label(for='certification-field') Judging certification
             select#certification-field.form-control.input-lg(name='certification_field')
-              option(value='0') None
               each cert in certifications
                 option(value=cert.id)
                   = cert.certification
