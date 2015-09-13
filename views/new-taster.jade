@@ -42,16 +42,9 @@ block content
             label(for='certification-field') Judging certification
             select#certification-field.form-control.input-lg(name='certification_field')
               option(value='0') None
-              option(value='1') BJCP - Provisional
-              option(value='2') BJCP - Apprentice
-              option(value='3') BJCP - Recognized
-              option(value='4') BJCP - Certified
-              option(value='5') BJCP - National
-              option(value='6') BJCP - Master
-              option(value='7') BJCP - Grand Master
-              option(value='8') Cicerone - Certified Beer Server
-              option(value='9') Cicerone - Certified Cicerone
-              option(value='10') Cicerone - Master Cicerone
+              each cert in certifications
+                option(value=cert.id)
+                  = cert.certification
             
       .row.hidden-xs
         .col-xs-10.col-xs-offset-1

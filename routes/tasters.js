@@ -18,9 +18,12 @@ router.get('/', function(req, res, next) {
 
 router.get('/new', function(req, res, next) {
   models.BrewingExperience.findAll().then(function(experiences) {
-    res.render('new-taster', {
-      title: "New Taster",
-      experiences: experiences
+    models.Certification.findAll().then(function(certifications) {
+      res.render('new-taster', {
+        title: "New Taster",
+        experiences: experiences,
+        certifications: certifications
+      });
     });
   });
 });
