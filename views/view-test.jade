@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  .container-fluid
+    .row
+      .col-xs-12
+        h1= title
+        
+    .row
+      .col-xs-12
+        h2 Scheduled Evaluations
+        
+        each evaluation in test.Evaluations
+          p
+            = evaluation.scheduled_start
+          p
+            = evaluation.Location.name
+          hr

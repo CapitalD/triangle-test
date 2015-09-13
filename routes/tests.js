@@ -12,6 +12,25 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/:test_id', function(req, res, next) {
+  models.Test.findOne({
+    where: {
+      id: req.params.test_id
+    },
+    include: [{
+      model: models.Evaluation,
+      include: [{
+        model: models.Location
+      }]
+    }],
+  }).then(function(test) {
+    res.render('view-test', {
+      title: test.name,
+      test: test
+    });
+  });
+});
+
 
 router.get('/new', function(req, res, next) {
   res.send('new test form');
