@@ -10,10 +10,10 @@ block content
     .row
       .col-xs-6.col-xs-offset-3
         .list-group
-          a.list-group-item(href='/tests/1')
-            h4.list-group-heading ABC test
-          a.list-group-item(href='/tests/2')
-            h4.list-group-heading XYZ test
+          each test in tests
+            a.list-group-item(href='/tests/'+test.id)
+              h4.list-group-heading
+                = test.name
             
     .row
       .col-xs-2.col-xs-offset-1
