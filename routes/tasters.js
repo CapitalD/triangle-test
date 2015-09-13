@@ -29,18 +29,13 @@ router.get('/new', function(req, res, next) {
 });
 
 router.post('/new', function(req, res, next) {
-  if (req.body.overall_knowledge_field > 0) {
-    var overall = req.body.overall_knowledge_field;
-  } else {
-    var overall = req.body.overall_knowledge_mob_field;
-  }
-
+  
   models.Taster.create({
     name: req.body.name_field,
     email: req.body.email_field,
     BrewingExperienceId: req.body.brewing_exp_field,
     CertificationId: req.body.certification_field,
-    overall_knowledge: overall
+    overall_knowledge: req.body.overall_knowledge_field
   }).then(function() {
     res.redirect('/tasters');
   });
