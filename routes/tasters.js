@@ -38,8 +38,8 @@ router.post('/new', function(req, res, next) {
   models.Taster.create({
     name: req.body.name_field,
     email: req.body.email_field,
-    brewing_exp: req.body.brewing_exp_field,
-    certification: req.body.certification_field,
+    BrewingExperienceId: req.body.brewing_exp_field,
+    CertificationId: req.body.certification_field,
     overall_knowledge: overall
   }).then(function() {
     res.redirect('/tasters');
