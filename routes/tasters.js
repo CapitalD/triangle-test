@@ -17,7 +17,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  res.render('new-taster', { title: "New Taster" });
+  models.BrewingExperience.findAll().then(function(experiences) {
+    res.render('new-taster', {
+      title: "New Taster",
+      experiences: experiences
+    });
+  });
 });
 
 router.post('/new', function(req, res, next) {

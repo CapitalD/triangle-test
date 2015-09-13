@@ -32,14 +32,9 @@ block content
             label(for='brewing-exp-field') Brewing experience
             select#brewing-exp-field.form-control.input-lg(name='brewing_exp_field')
               option(value='0') None
-              option(value='1') Homebrewer - Beginner
-              option(value='2') Homebrewer - Intermediate
-              option(value='3') Homebrewer - Advanced
-              option(value='4') Homebrewer - Expert
-              option(value='5') Pro-brewer - Junior
-              option(value='6') Pro-brewer - Senior
-              option(value='7') Pro-brewer - Head Brewer
-              option(value='8') Pro-brewer - Master Brewer
+              each exp in experiences
+                option(value=exp.id)
+                  = exp.level
       
         .col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-0
       
