@@ -8,8 +8,14 @@ router.get('/', function(req, res, next) {
     res.render('tests', {
       title: "All tests",
       tests: tests
-      });
+    });
   });
+});
+
+
+router.get('/new', function(req, res, next) {
+  res.sendStatus(404);
+  //res.render('new-test', { title: "New Test" });
 });
 
 router.get('/:test_id', function(req, res, next) {
@@ -32,10 +38,6 @@ router.get('/:test_id', function(req, res, next) {
 });
 
 
-router.get('/new', function(req, res, next) {
-  res.send('new test form');
-  //res.render('new-test', { title: "New Test" });
-});
 
 
 module.exports = router;
