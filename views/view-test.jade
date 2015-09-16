@@ -17,9 +17,11 @@ block content
               li.list-group-item.clearfix
                 span.pull-left
                   h4.list-group-header
-                    =moment(evaluation.scheduled_start).format("dddd D MMM")
-                    | &nbsp;at&nbsp;
-                    =evaluation.Location.name
+                    - var formatted_date = moment(evaluation.scheduled_start).format("dddd D MMM");
+                    span(data-toggle='tooltip', data-placement='top', title=formatted_date)
+                      =moment(evaluation.scheduled_start).fromNow()
+                      | &nbsp;at&nbsp;
+                      =evaluation.Location.name
                   p.list-group-item-text Starting at 
                     =moment(evaluation.scheduled_start).format("h:mma")
                 span.pull-right
@@ -35,3 +37,8 @@ block content
                           a Change location
                   
                     button.btn.btn-lg.btn-primary(type='button') Start
+
+block body_end
+  script(type='text/javascript', src='/javascripts/triangle.js')
+  script(type='text/javascript')
+    | start_all_tooltips();

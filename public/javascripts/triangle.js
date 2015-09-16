@@ -13,3 +13,7 @@ function select_value_to_radio(select_field, radio_field) {
     $("input[name="+radio_field+"]").filter('[value='+$("select[name="+select_field+"]").val()+']').prop("checked", true);
   });
 }
+
+function start_all_tooltips() {
+  $('[data-toggle="tooltip"]').tooltip();
+}
