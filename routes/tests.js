@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/new', function(req, res, next) {
-  res.sendStatus(404);
+  res.sendStatus(418);
   //res.render('new-test', { title: "New Test" });
 });
 
