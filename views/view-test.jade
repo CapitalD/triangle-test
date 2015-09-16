@@ -8,12 +8,30 @@ block content
         h1= title
         
     .row
-      .col-xs-12
-        h2 Scheduled Evaluations
-        
-        each evaluation in test.Evaluations
-          p
-            = evaluation.scheduled_start
-          p
-            = evaluation.Location.name
-          hr
+      .col-sm-6.col-sm-offset-3.col-xs-10.col-xs-offset-1
+        .panel.panel-info
+          .panel-heading Scheduled evaluations
+    
+          ul.list-group.text-left
+            each evaluation in test.Evaluations
+              li.list-group-item.clearfix
+                span.pull-left
+                  h4.list-group-header
+                    =moment(evaluation.scheduled_start).format("dddd D MMM")
+                    | &nbsp;at&nbsp;
+                    =evaluation.Location.name
+                  p.list-group-item-text Starting at 
+                    =moment(evaluation.scheduled_start).format("h:mma")
+                span.pull-right
+                  .btn-group.btn-group-lg(role='group')
+                    .btn-group.btn-group-lg(role='group')
+                      button.btn.btn-lg.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Options
+                        | &nbsp;
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a Reschedule
+                          a Cancel
+                          a Change location
+                  
+                    button.btn.btn-lg.btn-primary(type='button') Start
