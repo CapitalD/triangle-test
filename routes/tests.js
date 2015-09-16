@@ -29,6 +29,9 @@ router.get('/:test_id', function(req, res, next) {
         model: models.Location
       }]
     }],
+    order: [
+      [models.Evaluation, 'scheduled_start', "DESC"]
+    ]
   }).then(function(test) {
     res.render('view-test', {
       title: test.name,
