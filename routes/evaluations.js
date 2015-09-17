@@ -9,7 +9,7 @@ router.get('/new', function(req, res, next) {
     ]
   }).then(function(locations) {
     res.render('new-evaluation', {
-      title: "New Evaluation",
+      title: "New evaluation",
       locations: locations
     });
   })

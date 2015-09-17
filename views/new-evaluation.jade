@@ -21,7 +21,7 @@ block content
             
         .col-xs-5
           .form-group.text-left
-            label(for='time_field') time
+            label(for='time_field') Time
             .input-group.input-group-lg
               input#time_field.form-control(type='text', name='time_field' placeholder='Time', aria-describedby='time_field')
               span.input-group-addon 
@@ -33,9 +33,41 @@ block content
           .form-group.text-left
             label(for='location') Location
             select#location.form-control.input-lg(name='location')
+              option Select one...
               each loc in locations
                 option(value=loc.id)
                   =loc.name
+                  
+      .row
+        .col-xs-5.col-xs-offset-1
+          .form-group.text-left
+            label(for='sample_identifer') Sample identifier
+            select#sample_identifer.form-control.input-lg(name='sample_identifer')
+              option() Colour only
+              option(value='ABC', selected=true) A, B, C
+              option(value='123') 1, 2, 3
+              
+        .col-xs-5
+          .form-group.text-left
+            label(for='colour_coding') Colour coding
+            select#colour_coding.form-control.input-lg(name='colour_coding')
+              option() None
+              option(value='1') Red, green, blue
+              
+      .row
+        .col-xs-10.col-xs-offset-1
+          .form-group.text-left
+            label(for='correct_sample') Select the correct sample
+            .btn-group.btn-group-justified(data-toggle='buttons')
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='1', name='correct_sample', autocomplete='off')
+                | A
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='2', name='correct_sample', autocomplete='off')
+                | B
+              label.btn.btn-lg.btn-default
+                input(type='radio', value='3', name='correct_sample', autocomplete='off')
+                | C
               
       .row
         .col-sm-3.col-xs-offset-1.col-xs-5
@@ -46,5 +78,4 @@ block content
 block body_end
   script(type='text/javascript', src='/javascripts/triangle.js')
   script(type='text/javascript')
-    | better_button_group("overall_knowledge_field", "btn-success");
-    | select_value_to_radio("overall_knowledge_mob_field", "overall_knowledge_field");
+    | update_sample_identifiers("sample_identifer", "correct_sample");
