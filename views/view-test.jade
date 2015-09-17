@@ -21,7 +21,7 @@ block content
               li.list-group-item.clearfix
                 span.pull-left
                   h4.list-group-header
-                    - var formatted_date = moment(evaluation.scheduled_start).format("dddd D MMM YY");
+                    - var formatted_date = moment(evaluation.scheduled_start).format("dddd D MMM YY h:ma");
                     span(data-toggle='tooltip', data-placement='top', title=formatted_date)
                       =moment(evaluation.scheduled_start).calendar()
                   p.list-group-item-text Location: 
