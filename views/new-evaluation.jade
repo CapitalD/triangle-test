@@ -43,7 +43,7 @@ block content
           .form-group.text-left
             label(for='sample_identifer') Sample identifier
             select#sample_identifer.form-control.input-lg(name='sample_identifer')
-              option() Colour only
+              option(value='') Colour only
               option(value='ABC', selected=true) A, B, C
               option(value='123') 1, 2, 3
               
@@ -51,7 +51,7 @@ block content
           .form-group.text-left
             label(for='colour_coding') Colour coding
             select#colour_coding.form-control.input-lg(name='colour_coding')
-              option() None
+              option(value='') None
               option(value='1') Red, green, blue
               
       .row
@@ -59,7 +59,7 @@ block content
           .form-group.text-left
             label(for='correct_sample') Select the correct sample
             .btn-group.btn-group-justified(data-toggle='buttons')
-              label.btn.btn-lg.btn-default
+              label.btn.btn-lg.btn-default.option-button
                 input(type='radio', value='1', name='correct_sample', autocomplete='off')
                 | A
               label.btn.btn-lg.btn-default

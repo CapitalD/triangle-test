@@ -4,6 +4,9 @@ body {
 
 .option-button {
   height: 5em;
+}
+
+a[role="button"].option-button {
   line-height: 4em;
 }
 

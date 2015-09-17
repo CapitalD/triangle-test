@@ -17,7 +17,7 @@ function select_value_to_radio(select_field, radio_field) {
 /* update correct sample radios with chosen identiifer */
 function update_sample_identifiers(select_field, radio_field) {
   $("select[name="+select_field+"]").change(function() {
-    var new_values = $(this).val().split("");
+    var new_values = $(this).val().split("") ? $(this).val() : ["","",""];
       $("input[name="+radio_field+"]").each(function(index, value) {
         var label = $(this).parents("label");
         var radio = $.parseHTML(label.html())[0];
