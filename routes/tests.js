@@ -14,9 +14,21 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/new', function(req, res, next) {
-  res.sendStatus(418);
-  //res.render('new-test', { title: "New Test" });
+  res.render('new-test', {
+    title: "New Test"
+  });
 });
+
+router.post('/new', function(req, res, next) {
+  models.Test.create({
+    name: req.body.name_field
+  }).then(function() {
+    res.redirect('/tests');
+  });
+});
+
+
+
 
 router.get('/:test_id', function(req, res, next) {
   models.Test.findOne({
