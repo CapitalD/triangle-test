@@ -17,16 +17,36 @@ function select_value_to_radio(select_field, radio_field) {
 /* update correct sample radios with chosen identiifer */
 function update_sample_identifiers(select_field, radio_field) {
   $("select[name="+select_field+"]").change(function() {
-    var new_values = $(this).val().split("") ? $(this).val() : ["","",""];
-      $("input[name="+radio_field+"]").each(function(index, value) {
-        var label = $(this).parents("label");
-        var radio = $.parseHTML(label.html())[0];
-        label.html("");
-        label.append(radio).append(new_values[index]);
-      });
+    if ($(this).val()) {
+      var new_values = $(this).val().split("");
+    } else {
+      var new_values = ["&nbsp;&nbsp;","&nbsp;&nbsp;","&nbsp;&nbsp;"];
+    }
+    $("input[name="+radio_field+"]").each(function(index, value) {
+      $(this).parents("label").find("span.label").html(new_values[index]);
+    });
   });
 }
 
+/* update correct sample radios with chosen colour */
+function update_sample_colours(select_field, radio_field) {
+  $("select[name="+select_field+"]").change(function() {
+    var selected = $(this).children().filter(":selected");
+    if (selected.attr("data-colours")) {
+      var colours = selected.attr("data-colours").split(",");
+    } else {
+      var colours = false;
+    }
+
+    $("input[name="+radio_field+"]").each(function(index, value) {
+      if (colours) {
+        $(this).parents("label").find("span.label").removeClass("label-no-colour").addClass("label-default").css("background-color",colours[index]);
+      } else {
+        $(this).parents("label").find("span.label").removeClass("label-default").addClass("label-no-colour").css("background","none");
+      }
+    });
+  });
+}
 
 /* init all tooltips on a page */
 function start_all_tooltips() {

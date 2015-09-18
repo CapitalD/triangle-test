@@ -18,6 +18,22 @@ a[role="button"].option-button {
   width: 21%;
 }
 
+.sample-label {
+  width: 1em;
+  height: 100%;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.label-no-colour {
+  background: none;
+  padding: 0.1em 0.5em 0.2em;
+  border: 2px solid #777;
+  color: #777;
+}
+
 /* ADJUSTMENTS FOR MOBILE */
 @media (max-width: 767px) {
   .option-button {
