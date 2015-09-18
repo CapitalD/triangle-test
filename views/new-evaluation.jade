@@ -16,16 +16,18 @@ block content
             label(for='date_field') Date
             .input-group.input-group-lg
               input#date_field.form-control(type='text', name='date_field' placeholder='Date', aria-describedby='date_field')
-              span.input-group-addon
-                span.glyphicon.glyphicon-calendar(aria-hidden='true')
+              span.input-group-btn
+                button.btn.btn-default
+                  span.glyphicon.glyphicon-calendar(aria-hidden='true')
             
         .col-xs-5
           .form-group.text-left
             label(for='time_field') Time
             .input-group.input-group-lg
               input#time_field.form-control(type='text', name='time_field' placeholder='Time', aria-describedby='time_field')
-              span.input-group-addon 
-                span.glyphicon.glyphicon-time(aria-hidden='true')
+              span.input-group-btn
+                button.btn.btn-default
+                  span.glyphicon.glyphicon-time(aria-hidden='true')
       
       .row
         .col-xs-10.col-xs-offset-1
