@@ -1,8 +1,24 @@
 module.exports = function(sequelize, DataTypes) {
   var Taster = sequelize.define("Taster", {
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    overall_knowledge: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true
+      }
+    },
+    overall_knowledge: {
+      type: DataTypes.INTEGER,
+      validate: {
+        isInt: true
+      }
+    }
   }, {
     classMethods: {
       associate: function(models) {

@@ -1,6 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var BrewingExperience = sequelize.define("BrewingExperience", {
-    level: DataTypes.STRING
+    level: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    }
   });
 
   return BrewingExperience;
