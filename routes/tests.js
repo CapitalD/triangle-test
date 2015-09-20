@@ -15,22 +15,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/:test_id', function(req, res, next) {
-  models.Test.findOne({
-    where: {
-      id: req.params.test_id
-    },
-    include: [{
-       model: models.Location
-    }]
-  }).then(function(test) {
-      res.render('test', {
-        title: test.name,
-        test: test
-      });
-    });
-});
-
 router.post('/new', function(req, res, next) {
 
     req.checkBody('name_field', "A test name is required").notEmpty();
@@ -73,11 +57,30 @@ router.get('/new', function(req, res, next) {
       ['name', 'ASC']
     ]
   }).then(function(locations) {
-    res.render('new-test', {
-      title: "New test",
-      locations: locations
+    models.SampleColour.findAll().then(function(colours) {
+      res.render('new-test', {
+        title: "New test",
+        locations: locations,
+        colours: colours
+      });
     });
-  })
+  });
+});
+
+router.get('/:test_id', function(req, res, next) {
+  models.Test.findOne({
+    where: {
+      id: req.params.test_id
+    },
+    include: [{
+       model: models.Location
+    }]
+  }).then(function(test) {
+      res.render('test', {
+        title: test.name,
+        test: test
+      });
+    });
 });
 
 module.exports = router;
