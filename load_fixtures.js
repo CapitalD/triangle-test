@@ -1,6 +1,6 @@
 var sequelize_fixtures = require('sequelize-fixtures');
 models = require('./models');
 
-sequelize_fixtures.loadFile('fixtures/*.js', models).then(function() {
+sequelize_fixtures.loadFiles(['fixtures/location.js','fixtures/*.js'], models).then(function() {
   console.log('Fixtures loaded');
 });
