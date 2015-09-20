@@ -4,7 +4,11 @@ var models = require('../models');
 
 /* GET tests listing. */
 router.get('/', function(req, res, next) {
-  models.Test.findAll().then(function(tests) {
+  models.Test.findAll({
+    order: [
+      ['updatedAt','DESC']
+    ]
+  }).then(function(tests) {
     res.render('tests', {
       title: "All tests",
       tests: tests
