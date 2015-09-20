@@ -12,7 +12,8 @@ block content
         .list-group
           each test in tests
             a.list-group-item(href='/tests/'+test.id)
-              h4.list-group-heading
+              h4.list-group-heading.text-left
+                span.label.label-default.pull-right 0
                 = test.name
             
     .row
