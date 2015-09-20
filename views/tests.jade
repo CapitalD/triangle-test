@@ -13,7 +13,10 @@ block content
           each test in tests
             a.list-group-item(href='/tests/'+test.id)
               h4.list-group-heading.text-left
-                span.label.label-default.pull-right 0
+                if test.in_progress
+                  span.label.label-warning.pull-right 0
+                else
+                  span.label.label-default.pull-right 0
                 =test.name
             
     .row

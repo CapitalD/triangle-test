@@ -86,4 +86,27 @@ router.get('/:test_id', function(req, res, next) {
   });
 });
 
+router.get('/:test_id/start', function(req, res, next) {
+  models.Test.update({
+    in_progress: true,
+  }, {
+    where: {
+      id: req.params.test_id
+    }
+  });
+  res.redirect("/tests/"+req.params.test_id)
+
+});
+
+router.get('/:test_id/stop', function(req, res, next) {
+  models.Test.update({
+    in_progress: false,
+  }, {
+    where: {
+      id: req.params.test_id
+    }
+  });
+  res.redirect("/tests/"+req.params.test_id)
+});
+
 module.exports = router;

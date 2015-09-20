@@ -32,23 +32,19 @@ function update_sample_identifiers(select_field, radio_field) {
 function update_sample_colours(select_field, radio_field) {
   $("select[name="+select_field+"]").change(function() {
     var selected = $(this).children().filter(":selected");
-    if (selected.attr("data-colours")) {
-      var colours = selected.attr("data-colours").split(",");
-    } else {
-      var colours = false;
-    }
-
+    var colours = selected.attr("data-colours").split(",");
     display_choices("label.option-button",colours);
   });
 }
 
 function display_choices(buttons, colours) {
   $(buttons).each(function(index, value) {
-    $(this).find("span.label").css("background-color",colours[index]);
+    var identifier = $(this).find("span.label");
+    identifier.css("background-color",colours[index]);
     if (colours[index] == "#fff") {
-      $(this).find("span.label").css("color","#777");
+      identifier.css("color","#777");
     } else {
-      $(this).find("span.label").css("color","#fff");
+      identifier.css("color","#fff");
     }
   });
 }
