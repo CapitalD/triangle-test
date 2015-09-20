@@ -3,9 +3,9 @@ module.exports = [
     "model": "SampleColour",
     "data": {
       "name": "None",
-      "colour1": "",
-      "colour2": "",
-      "colour3": ""
+      "colour1": "#fff",
+      "colour2": "#fff",
+      "colour3": "#fff"
     }
   },{
     "model": "SampleColour",
@@ -30,6 +30,14 @@ module.exports = [
       "colour1": "#ce1126",
       "colour2": "#f9d616",
       "colour3": "#007a3d"
+    }
+  },{
+    "model": "SampleColour",
+    "data": {
+      "name": "PostIts",
+      "colour1": "#00ecff",
+      "colour2": "#7cff00",
+      "colour3": "#e3ff00"
     }
   }
 ];

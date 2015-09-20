@@ -2,6 +2,10 @@ body {
   text-align: center;
 }
 
+.footer {
+  height: 2em;
+}
+
 .option-button {
   height: 5em;
 }
@@ -25,11 +29,10 @@ a[role="button"].option-button {
 .label {
   text-shadow:0 -1px 0px rgba(1,1,1,0.4);
   padding: 0.1em 0.5em 0.2em;
-  border: 2px solid #777;
 }
 
 .label-no-colour {
-  background: none;
+  background-color: #fff;
   padding: 0.1em 0.5em 0.2em;
   border: 2px solid #777;
   color: #777;

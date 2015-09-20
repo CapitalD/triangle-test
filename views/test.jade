@@ -53,5 +53,7 @@ block content
 block body_end
   script(type='text/javascript', src='/javascripts/triangle.js')
   script(type='text/javascript').
+    
     $("#sample_" + #{test.correct_sample}).addClass("active");
-    display_sample_colours("#{test.SampleColour.colour1}", "#{test.SampleColour.colour2}", "#{test.SampleColour.colour3}");
+    var colours = ["#{test.SampleColour.colour1}", "#{test.SampleColour.colour2}", "#{test.SampleColour.colour3}"];
+    display_choices("button.option-button",colours);

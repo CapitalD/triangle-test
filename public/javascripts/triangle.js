@@ -38,24 +38,17 @@ function update_sample_colours(select_field, radio_field) {
       var colours = false;
     }
 
-    $("input[name="+radio_field+"]").each(function(index, value) {
-      if (colours) {
-        $(this).parents("label").find("span.label").removeClass("label-no-colour").addClass("label-default").css("background-color",colours[index]);
-      } else {
-        $(this).parents("label").find("span.label").removeClass("label-default").addClass("label-no-colour").css("background","none");
-      }
-    });
+    display_choices("label.option-button",colours);
   });
 }
 
-function display_sample_colours(colour1,colour2,colour3) {
-  var colours = [colour1,colour2,colour3];
-  $("span.label").each(function(index) {
-    if (colours[index]) {
-      $(this).removeClass("label-no-colour").addClass("label-default").css("background-color",colours[index]);
+function display_choices(buttons, colours) {
+  $(buttons).each(function(index, value) {
+    $(this).find("span.label").css("background-color",colours[index]);
+    if (colours[index] == "#fff") {
+      $(this).find("span.label").css("color","#777");
     } else {
-      $("span.label").removeClass("label-default").addClass("label-no-colour").css("background","none");
+      $(this).find("span.label").css("color","#fff");
     }
   });
-  console.log();
 }
