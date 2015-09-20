@@ -1,0 +1,74 @@
+extends layout
+
+block content
+
+  .container-fluid
+
+    form(action="/tests/new", method="post")
+      .row
+        .col-xs-12
+          h1= title
+
+      .row
+        .col-xs-10.col-xs-offset-1
+
+          .form-group.text-left
+            label(for='name_field') Name
+            input#name_field.form-control.input-lg(type='text', name='name_field' placeholder='Name', aria-describedby='name_field')
+
+      .row
+        .col-xs-10.col-xs-offset-1
+
+          .form-group.text-left
+            label(for='location') Location
+            select#location.form-control.input-lg(name='location')
+              option Select one...
+              each loc in locations
+                option(value=loc.id)
+                  =loc.name
+
+      .row
+        .col-xs-5.col-xs-offset-1
+          .form-group.text-left
+            label(for='sample_identifer') Sample identifier
+            select#sample_identifer.form-control.input-lg(name='sample_identifer')
+              option(value='') Colour only
+              option(value='ABC', selected=true) A, B, C
+              option(value='123') 1, 2, 3
+
+        .col-xs-5
+          .form-group.text-left
+            label(for='colour_coding') Colour coding
+            select#colour_coding.form-control.input-lg(name='colour_coding')
+              option(value='') None
+              option(value='1', data-colours='#d9534f,#5cb85c,#337ab7') Red, green, blue
+
+      .row
+        .col-xs-10.col-xs-offset-1
+          .form-group.text-left
+            label(for='correct_sample') Select the correct sample
+            .btn-group.btn-group-justified(data-toggle='buttons')
+              label.btn.btn-lg.btn-default.option-button
+                input(type='radio', value='1', name='correct_sample', autocomplete='off')
+                h2.no-margin
+                  span.label.label-no-colour A
+              label.btn.btn-lg.btn-default.option-button
+                input(type='radio', value='2', name='correct_sample', autocomplete='off')
+                h2.no-margin
+                  span.label.label-no-colour B
+              label.btn.btn-lg.btn-default.option-button
+                input(type='radio', value='3', name='correct_sample', autocomplete='off')
+                h2.no-margin
+                  span.label.label-no-colour C
+
+      .row
+        .col-sm-3.col-xs-offset-1.col-xs-5
+          a.btn.btn-lg.btn-default.btn-block.option-button(href='/tests/', role='button', name='back') Back
+        .col-sm-3.col-sm-offset-4.col-xs-5
+          button.btn.btn-lg.btn-info.btn-block.option-button(type='submit', name='save-taster') Save
+
+block body_end
+  script(type='text/javascript', src='/javascripts/triangle.js')
+  script(type='text/javascript')
+    | update_sample_identifiers("sample_identifer", "correct_sample");
+    | update_sample_colours("colour_coding", "correct_sample");

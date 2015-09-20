@@ -14,9 +14,16 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/new', function(req, res, next) {
-  res.send('new test form');
-  //res.render('new-test', { title: "New Test" });
+  models.Location.findAll({
+    order: [
+      ['name', 'ASC']
+    ]
+  }).then(function(locations) {
+    res.render('new-test', {
+      title: "New test",
+      locations: locations
+    });
+  })
 });
-
 
 module.exports = router;
