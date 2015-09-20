@@ -50,10 +50,16 @@ block content
         a.btn.btn-lg.btn-default.btn-block.option-button(href='/tests/', role='button', name='back') Back
       .col-sm-3.col-sm-offset-4.col-xs-5
         if test.in_progress
-          a#start_stop_button.btn.btn-lg.btn-primary.btn-block.option-button(href='/tests/#{test.id}/stop', role='button', name='stop') Stop testing
+          a#start_stop_button.btn.btn-lg.btn-warning.btn-block.option-button(href='/tests/#{test.id}/stop', role='button', name='stop') Stop testing
         else
           a#start_stop_button.btn.btn-lg.btn-primary.btn-block.option-button(href='/tests/#{test.id}/start', role='button', name='start') Start testing
 
+    if test.in_progress
+      .row
+        .col-xs-5.col-xs-offset-6
+          p Testing for 
+            =moment(test.updatedAt).fromNow(true)
+        
 block body_end
   script(type='text/javascript', src='/javascripts/triangle.js')
   script(type='text/javascript').
