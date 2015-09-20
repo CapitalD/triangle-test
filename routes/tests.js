@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var models = require('../models');
 
-/* GET tests listing. */
 router.get('/', function(req, res, next) {
   models.Test.findAll({
     order: [
@@ -12,8 +11,24 @@ router.get('/', function(req, res, next) {
     res.render('tests', {
       title: "All tests",
       tests: tests
-      });
+    });
   });
+});
+
+router.get('/:test_id', function(req, res, next) {
+  models.Test.findOne({
+    where: {
+      id: req.params.test_id
+    },
+    include: [{
+       model: models.Location
+    }]
+  }).then(function(test) {
+      res.render('test', {
+        title: test.name,
+        test: test
+      });
+    });
 });
 
 router.post('/new', function(req, res, next) {

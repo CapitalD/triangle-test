@@ -1,0 +1,41 @@
+extends layout
+
+block content
+
+  .container-fluid
+  
+    .row
+      .col-xs-10.col-xs-offset-1
+        h1
+          =title
+          
+    .row
+      .col-xs-10.col-xs-offset-1
+        h3
+          | Held at 
+          =test.Location.name
+          
+    .row
+      .col-xs-10.col-xs-offset-1
+      
+        .form-group.text-left
+          .btn-group.btn-group-justified(role='group')
+            .btn-group(role='group')
+              button#sample_1.btn.btn-lg.btn-default.option-button
+                h2.no-margin
+                  span.label.label-no-colour
+                    =test.sample_1_identifier
+            .btn-group(role='group')
+              button#sample_2.btn.btn-lg.btn-default.option-button
+                h2.no-margin
+                  span.label.label-no-colour
+                    =test.sample_2_identifier
+            .btn-group(role='group')
+              button#sample_3.btn.btn-lg.btn-default.option-button
+                h2.no-margin
+                  span.label.label-no-colour
+                    =test.sample_3_identifier
+
+block body_end
+  script(type='text/javascript')
+    | $("#sample_" + #{test.correct_sample}).addClass("active");
