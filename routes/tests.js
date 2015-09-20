@@ -40,6 +40,7 @@ router.post('/new', function(req, res, next) {
       models.Test.create({
         name: req.body.name_field,
         LocationId: req.body.location,
+        SampleColourId: req.body.colour_coding,
         correct_sample: req.body.correct_sample,
         sample_1_identifier: sample_identifiers[0],
         sample_2_identifier: sample_identifiers[1],
@@ -73,14 +74,16 @@ router.get('/:test_id', function(req, res, next) {
       id: req.params.test_id
     },
     include: [{
-       model: models.Location
+      model: models.Location
+    }, {
+      model: models.SampleColour
     }]
   }).then(function(test) {
-      res.render('test', {
-        title: test.name,
-        test: test
-      });
+    res.render('test', {
+      title: test.name,
+      test: test
     });
+  });
 });
 
 module.exports = router;

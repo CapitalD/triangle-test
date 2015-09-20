@@ -42,10 +42,10 @@ block content
             select#colour_coding.form-control.input-lg(name='colour_coding')
               each colour in colours
                 - var hex_colours = colour.colour1+','+colour.colour2+','+colour.colour3;
-                - if (hex_colours == ',,') { hex_colours = ''};
+                - if (hex_colours == ',,') { hex_colours = false };
                 option(
                   value=colour.id,
-                  data-colours=hex_colours
+                  data-colours = hex_colours
                 )
                   =colour.name
 

@@ -29,7 +29,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Test.belongsTo(models.Location)
+        Test.belongsTo(models.Location),
+        Test.belongsTo(models.SampleColour)
       }
     }
   });

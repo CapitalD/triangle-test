@@ -47,3 +47,15 @@ function update_sample_colours(select_field, radio_field) {
     });
   });
 }
+
+function display_sample_colours(colour1,colour2,colour3) {
+  var colours = [colour1,colour2,colour3];
+  $("span.label").each(function(index) {
+    if (colours[index]) {
+      $(this).removeClass("label-no-colour").addClass("label-default").css("background-color",colours[index]);
+    } else {
+      $("span.label").removeClass("label-default").addClass("label-no-colour").css("background","none");
+    }
+  });
+  console.log();
+}

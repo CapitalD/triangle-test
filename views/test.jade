@@ -24,18 +24,29 @@ block content
               button#sample_1.btn.btn-lg.btn-default.option-button
                 h2.no-margin
                   span.label.label-no-colour
-                    =test.sample_1_identifier
+                    if test.sample_1_identifier
+                      =test.sample_1_identifier
+                    else
+                      | &nbsp;&nbsp;
             .btn-group(role='group')
               button#sample_2.btn.btn-lg.btn-default.option-button
                 h2.no-margin
                   span.label.label-no-colour
-                    =test.sample_2_identifier
+                    if test.sample_2_identifier
+                      =test.sample_2_identifier
+                    else
+                      | &nbsp;&nbsp;
             .btn-group(role='group')
               button#sample_3.btn.btn-lg.btn-default.option-button
                 h2.no-margin
                   span.label.label-no-colour
-                    =test.sample_3_identifier
+                    if test.sample_3_identifier
+                      =test.sample_3_identifier
+                    else
+                      | &nbsp;&nbsp;
 
 block body_end
-  script(type='text/javascript')
-    | $("#sample_" + #{test.correct_sample}).addClass("active");
+  script(type='text/javascript', src='/javascripts/triangle.js')
+  script(type='text/javascript').
+    $("#sample_" + #{test.correct_sample}).addClass("active");
+    display_sample_colours("#{test.SampleColour.colour1}", "#{test.SampleColour.colour2}", "#{test.SampleColour.colour3}");
