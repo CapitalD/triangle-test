@@ -10,8 +10,8 @@ block content
     .row
       .col-xs-10.col-xs-offset-1
         .well.well-lg
-          h4= active_tests 
-            |  tests in progress
+          h4= pluralize('test',active_tests, true)
+            |  in progress
             
     .row
       .col-xs-5.col-xs-offset-1
