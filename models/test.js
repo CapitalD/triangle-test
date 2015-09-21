@@ -32,6 +32,13 @@ module.exports = function(sequelize, DataTypes) {
         Test.belongsTo(models.Location),
         Test.belongsTo(models.SampleColour)
       }
+    },
+    scopes: {
+      in_progress: {
+        where: {
+          in_progress: true
+        }
+      }
     }
   });
 

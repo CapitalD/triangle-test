@@ -7,18 +7,36 @@ block content
   .row
     .col-xs-12
       h1= title
+  
+  if tests.length == 0
+    .row
+      .col-xs-10.col-xs-offset-1
+          h3 No tests are in progress
+  else      
+    .row
+      .col-xs-10.col-xs-offset-1
       
-  .row
-    .col-xs-10.col-xs-offset-1
-    
-      .panel.panel-default
-        .panel-body
-          
-          h4 You're about to be presented with three samples.
-          h4 Two are the same. One is different.
-          h4 You must try to pick the odd one out.
-          
-  .row
-    .col-xs-6.col-xs-offset-3
-      p When you're ready, press the button
-      a.btn.btn-lg.btn-info.btn-block(role='button', name='start_test') Start test
+        .panel.panel-default
+          .panel-body
+            
+            if tests.length == 1
+              h4 There is one test in progress at #{tests[0].Location.name}
+              
+            else
+              h4 Please choose a test
+              select.form-control.input-lg(name='active_tests')
+                each test in tests
+                  option(value=test.id) #{test.name} (#{test.Location.name})
+            
+            .form-group.text-left
+              label(for='name_field') Please enter your name
+              .input-group.input-group-lg
+                span.input-group-addon
+                  span.glyphicon.glyphicon-user(aria-hidden='true')
+                input#name_field.form-control(type='text', name='name_field' placeholder='Name', aria-describedby='name_field')
+
+                
+    .row
+      .col-xs-6.col-xs-offset-3
+        p When you're ready, press the button
+        a.btn.btn-lg.btn-info.btn-block(role='button', name='start_test') Start test
