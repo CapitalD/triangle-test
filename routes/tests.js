@@ -93,9 +93,9 @@ router.get('/:test_id/start', function(req, res, next) {
     where: {
       id: req.params.test_id
     }
+  }).then(function() {
+    res.redirect("/tests/"+req.params.test_id)
   });
-  res.redirect("/tests/"+req.params.test_id)
-
 });
 
 router.get('/:test_id/stop', function(req, res, next) {
@@ -105,8 +105,9 @@ router.get('/:test_id/stop', function(req, res, next) {
     where: {
       id: req.params.test_id
     }
+  }).then(function() {
+    res.redirect("/tests/"+req.params.test_id)
   });
-  res.redirect("/tests/"+req.params.test_id)
 });
 
 module.exports = router;
