@@ -24,6 +24,8 @@ router.post('/new', function(req, res, next) {
   var errors = req.validationErrors();
 
   if (errors) {
+    // redirect to GET /new with errors{} and res.body{}
+    // so that form is populated with values and errors can be displayed
     res.send(errors);
   } else {
     models.Taster.create({
