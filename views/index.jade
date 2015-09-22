@@ -29,11 +29,11 @@ block content
                   option(value=test.id) #{test.name} (#{test.Location.name})
             
             .form-group.text-left
-              label(for='name_field') Please enter your name
-              .input-group.input-group-lg
-                span.input-group-addon
-                  span.glyphicon.glyphicon-user(aria-hidden='true')
-                input#name_field.form-control(type='text', name='name_field' placeholder='Name', aria-describedby='name_field')
+              label(for='tasters') Please select your name
+              select#tasters.form-control.input-lg(name='tasters')
+                each taster in tasters
+                  option(value=taster.id)
+                    = taster.name
 
                 
     .row
