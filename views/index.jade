@@ -23,10 +23,11 @@ block content
               h4 There is one test in progress at #{tests[0].Location.name}
               
             else
-              h4 Please choose a test
-              select.form-control.input-lg(name='active_tests')
-                each test in tests
-                  option(value=test.id) #{test.name} (#{test.Location.name})
+              .form-group.text-left
+                label(for='active_tests') There is more than one test in progress. Please select a test location.
+                select#active_tests.form-control.input-lg(name='active_tests')
+                  each test in tests
+                    option(value=test.id) #{test.Location.name}
             
             .form-group.text-left
               label(for='tasters') Please select your name
